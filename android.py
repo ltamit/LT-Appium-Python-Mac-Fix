@@ -9,7 +9,7 @@ desired_caps = {
     "deviceName": "Galaxy S20",
     "platformName": "Android",
     "platformVersion": "10",
-    "app": "lt://proverbial-android",  # Enter app_url here
+    "app": "lt://APP1016046941678692547703428",  # Enter app_url here
     "isRealMobile": True,
     "build": "Python Vanilla Android",
     "name": "Sample Test - Python",
@@ -31,57 +31,54 @@ def startingTest():
     else:
         accesskey = os.environ.get("LT_ACCESS_KEY")
 
-    try:
-        driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
+
+    driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
                                   username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
-        colorElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    colorElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/color")))
-        colorElement.click()
+    colorElement.click()
 
-        textElement = WebDriverWait(driver, 20).until(
+    textElement = WebDriverWait(driver, 20).until(
             EC.element_to_be_clickable((MobileBy.ID, "com.lambdatest.proverbial:id/Text")))
-        textElement.click()
+    textElement.click()
 
-        toastElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    toastElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/toast")))
-        toastElement.click()
+    toastElement.click()
 
-        notification = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    notification = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/notification")))
-        notification.click()
+    notification.click()
 
-        geolocation = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    geolocation = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/geoLocation")))
-        geolocation.click()
-        time.sleep(5)
+    geolocation.click()
+    time.sleep(5)
 
-        driver.back()
+    driver.back()
 
-        home = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    home = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/buttonPage")))
-        home.click()
+    home.click()
 
-        speedTest = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    speedTest = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/speedTest")))
-        speedTest.click()
-        time.sleep(5)
+    speedTest.click()
+    time.sleep(5)
 
-        driver.back()
+    driver.back()
 
-        browser = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    browser = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/webview")))
-        browser.click()
+    browser.click()
 
-        url = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    url = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/url")))
-        url.send_keys("https://www.lambdatest.com")
+    url.send_keys("https://www.lambdatest.com")
 
-        find = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
+    find = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
             (MobileBy.ID, "com.lambdatest.proverbial:id/find")))
-        find.click()
-        driver.quit()
-    except:
-        driver.quit()
-
+    find.click()
+    driver.quit()
 
 startingTest()
