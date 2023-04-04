@@ -167,12 +167,16 @@ Run the following command in the directory where your project has been saved to 
 **Android:**
 
 ```bash
+pip3 install --upgrade certifi
+python3 certinstall.py
 python3 android.py
 ```
 
 **IOS:**
 
 ```bash
+pip3 install --upgrade certifi
+python3 certinstall.py
 python3 ios.py
 ```
 **Info Note:**
